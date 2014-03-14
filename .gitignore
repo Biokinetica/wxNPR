@@ -3,3 +3,4 @@
 !.gitignore
 !src/*.cpp
 !src/*.h
+!README.md
