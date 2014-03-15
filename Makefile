@@ -6,7 +6,7 @@
 #
 
 # define the C compiler to use
-GCC = $(shell wx-config --cxx)
+GCC = g++
 
 # define any compile-time flags
 CFLAGS = -std=c++11

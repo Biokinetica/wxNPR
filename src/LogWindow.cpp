@@ -22,7 +22,6 @@
 #include <vector>
 #include <system_error>
 #include <boost/regex.hpp>
-#include "mongo/client/dbclient.h"
 #include <tuple>
 #include <curl/curl.h>
 ///////////////////////////////////////////////////////////////////////////
@@ -182,21 +181,9 @@ if(value.isMember("message"))
     return 0;
 }
 
-
-bson::bo obj;
-
-/*mongo::DBClientConnection conn;
-conn.connect("ds035498.mongolab.com:35498", err);
-
-    bool ok = conn.auth("projects","DixieFlatline","panthermodern",err);
-    if ( ! ok )
-        std::cout << "DIDN'T WORK" << std::endl;
-    MONGO_verify( ok );*/
 wx = "";
 
 blob = std::make_tuple(panel,sizer,windows,wx,storyName);
-/*std::tuple<wxPanel*,wxStaticBoxSizer*,wxWebView*,wxString,wxString> blob1;
-blob1 = std::make_tuple(panel,sizer,content,wx,storyName);*/
 
 Show();
 
@@ -212,8 +199,6 @@ ob.push_back(value.get("list","No info available").get("story","No strories avai
 	   std::get<3>(blob) = ob[i].get("fullText","No HTML article available").get("$text","No story present").asString();
 
 	   CreateNprWindow(blob);
-
-	   //conn.insert("projects.NPR_Stories", BSON("article" << std::get<3>(blob).mb_str()));
 
 
 	   std::get<3>(blob).Clear();
@@ -232,12 +217,9 @@ ob.push_back(value.get("list","No info available").get("story","No strories avai
 
 	   CreateNprWindow(blob);
 
-	   //conn.insert("projects.NPR_Stories", BSON("article" << std::get<3>(blob).mb_str()));
-
         std::get<3>(blob).Clear();
 	}
 }
 
-//conn.logout("projects",obj);
 return 1;
 }
