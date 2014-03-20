@@ -5,7 +5,7 @@
 # 'make clean'  removes all .o and executable files
 #
 
-# define the C compiler to use
+# define the C++ compiler to use
 GCC = g++
 
 # define any compile-time flags
@@ -25,15 +25,15 @@ LFLAGS = -L/usr/local/lib  -L/Lib64
 #   option, something like (this will link in libmylib.so and libm.so:
 LIBS = `wx-config --libs` -lcurl -ljsoncpp -lboost_regex -lboost_system -lboost_thread
 
-# define the C source files
+# define the C++ source files
 SRCS = $(wildcard src/*.cpp)
 
-# define the C object files 
+# define the C++ object files 
 #
 # This uses Suffix Replacement within a macro:
 #   $(name:string1=string2)
 #         For each word in 'name' replace 'string1' with 'string2'
-# Below we are replacing the suffix .c of all words in the macro SRCS
+# Below we are replacing the suffix .cpp of all words in the macro SRCS
 # with the .o suffix
 #
 OBJS = $(SRCS:.cpp=.o)
