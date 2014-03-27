@@ -13,7 +13,7 @@ CFLAGS = -std=c++11
 
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = `wx-config --cxxflags`
+INCLUDES = `wx-config-3.0 --cxxflags` -I/usr/include/jsoncpp
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -23,7 +23,7 @@ LFLAGS = -L/usr/local/lib  -L/Lib64
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-LIBS = `wx-config --libs` -lcurl -ljsoncpp -lboost_regex -lboost_system -lboost_thread
+LIBS = `wx-config-3.0 --libs` -lcurl -ljsoncpp -lboost_regex -lboost_system -lboost_thread
 
 # define the C++ source files
 SRCS = $(wildcard src/*.cpp)
