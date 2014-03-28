@@ -22,7 +22,7 @@ LFLAGS = -L/usr/local/lib  -L/Lib64
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
-#   option, something like (this will link in libmylib.so and libm.so:
+#   option, something like this:
 LIBS = `wx-config-3.0 --libs` -lcurl -ljsoncpp -lboost_regex -lboost_system -lboost_thread
 
 # define the C++ source files
